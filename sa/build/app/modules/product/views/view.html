@@ -1,0 +1,168 @@
+<section>
+    <home-carousel-small images="images"></home-carousel-small>
+</section>
+<div class="product-page" id="product-page">
+    <section class="page">
+        <section class="product-view">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ol class="breadcrumb top-breadcrumb">
+                            <li><a href="" ui-sref="product-listing">Product List</a></li>
+                            <li class="active">Images</li>
+                        </ol>
+                    </div>
+                    <div class="col-sm-6">
+
+                    </div>
+                </div>
+            </div>
+
+            <section class="container">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="slider-custom slider-product">
+                            <div class="img-slider clearfix">
+                                <div class="slider-content">
+                                    <div class="img-container">
+                                        <ul class="img-list">
+                                            <li class="img-wrapper" ng-repeat="slide in vm.product.images | limitTo: 5" ng-hide="!vm.isCurrentIndex($index)" ng-swipe-left="vm.showNext()" ng-swipe-right="vm.showPrevious()" ng-class="{'active':vm.isCurrentIndex($index)}">
+                                                <img class="img-responsive center-block" ng-src="{{slide.urls[2].url}}" alt="{{slide.asset_id}}">
+                                            </li>
+                                            
+                                        </ul>
+
+                                        <nav class="directional-nav">
+                                            <ul>
+                                                <li class="direction-control left">
+                                                    <a href="javascript:void(0)" ng-click="vm.showPrevious()"><em class="icon ico-arrow-left"></em></a>
+                                                </li>
+                                                <li class="direction-control right">
+                                                    <a href="javascript:void(0)" ng-click="vm.showNext()"><em class="icon ico-arrow-right"></em></a>
+
+                                                </li>
+                                                
+                                            </ul>
+
+                                        </nav>
+                                    </div>
+                                    <nav class="thumb-nav">
+                                        <ul class="thumb-wrapper">
+                                            <li ng-repeat="slide in vm.product.images | limitTo: 5" class="thumb" ng-class="{'active':vm.isCurrentIndex($index)}" ng-click="vm.setCurrentIndex($index);">
+                                                <img ng-src="{{slide.urls[0].url}}" class="img-responsive" alt="{{slide.asset_id}}">
+
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 product-details">
+                        <div class="action-container">
+                            <ul class="list-inline">
+                                <li class="action">
+                                    <button class="btn">Brand Microsite</button>
+                                </li>
+
+                                <li class="action has-gray-dropdown">
+                                    <ui-select ng-model="vm.seletedItemsPerPage" theme="bootstrap">
+                                        <ui-select-match placeholder="Contact Brand">{{$select.selected.name}}</ui-select-match>
+                                        <ui-select-choices repeat="item in (vm.sortItemList | filter: $select.search)">
+                                            <div ng-bind-html="item.name | highlight: $select.search"></div>
+
+                                        </ui-select-choices>
+                                    </ui-select>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="clearfix product-description">
+                            <h2>{{vm.product.detail.title}}</h2>
+                            <p class="cat">
+                                {{vm.product.brand.name}}
+                            </p>
+                            <span>
+                        <strong>
+                        {{vm.product.priceInfo.currency_code}} {{vm.product.priceInfo.currency_symbol}}{{vm.product.priceInfo.unit_price}}
+                        </strong>
+                        <label>RRP $6,800</label>
+                    </span>
+                            <p class="des">
+                                {{vm.product.translation[translate].description}}
+                            </p>
+                            <label ng-if="vm.product.publish" class="delTime">
+                            Added : {{moment(vm.product.publish).format("DD-MMM-YYYY")}}
+                        </label>
+                        </div>
+                        <hr>
+                        <v-accordion class="vAccordion--default" multiple="multiple">
+                            <v-pane>
+                                <v-pane-header>
+                                    <p>
+                                        Currency Converter
+                                    </p>
+                                </v-pane-header>
+                                <v-pane-content>
+                                    <span class="single-color" ng-repeat="varient in productDetails.variants" ng-if="varient.category == 1" style="background-color: #{{varient.value}}"></span>
+                                </v-pane-content>
+                            </v-pane>
+                        </v-accordion>
+                        <hr>
+                        <form name="quantityForm">
+                            <button type="submit" class="btn btn-primary" ng-click="showAdvanced($event)">Download</button>
+                            <button type="submit" class="btn btn-primary">ADD TO Pressbord</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="container midcontent">
+
+        </section>
+
+        <section class="container-fulid btmcontent">
+            <div class="container">
+                <h3>More from christopher guy</h3>
+                <div class="row">
+                    <div class="col-md-2 col-xs-6">
+                        <img class="img-responsive" src="./assets/images/product/33.jpg" alt="">
+                        <p class="styleboard-name">Furniture item 1</p>
+                        <label class="styleboard"><a href="#">View item</a><label>
+                        </label></label></div>
+                    <div class="col-md-2 col-xs-6">
+                        <img class="img-responsive" src="./assets/images/product/44.jpg" alt="">
+                        <p class="styleboard-name">Furniture item 1</p>
+                        <label class="styleboard"><a href="#">View item</a><label>
+                        </label></label></div>
+                    <div class="col-md-2 col-xs-6">
+                        <img class="img-responsive" src="./assets/images/product/55.jpg" alt="">
+                        <p class="styleboard-name">Furniture item 1</p>
+                        <label class="styleboard"><a href="#">View item</a></label>
+                    </div>
+                    <div class="col-md-2 col-xs-6">
+                        <img class="img-responsive" src="./assets/images/product/22.jpg" alt="">
+                        <p class="styleboard-name">Furniture item 1</p>
+                        <label class="styleboard"><a href="#">Buy Now</a></label>
+                    </div>
+                    <div class="col-md-2 col-xs-6">
+                        <img class="img-responsive" src="./assets/images/product/66.jpg" alt="">
+                        <p class="styleboard-name">Furniture item 1</p>
+                        <label class="styleboard"><a href="#">Buy Now</a></label>
+                    </div>
+                    <div class="col-md-2 col-xs-6">
+                        <img class="img-responsive" src="./assets/images/product/77.jpg" alt="">
+                        <p class="styleboard-name">Furniture item 1</p>
+                        <label class="styleboard"><a href="#">Buy Now</a></label>
+                    </div>
+                </div>
+                <div class="row btn-container">
+                    <div class="col-xs-12">
+                        <button class="btn btn-primary center-block">View All</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>

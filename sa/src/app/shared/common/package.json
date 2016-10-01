@@ -1,0 +1,13 @@
+{
+  "name": "common-modules",
+  "version": "1.0.0",
+  "description": "To only use with cloud-decor related products",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nilesh Jayanandana",
+  "license": "ISC",
+  "dependencies": {
+  }
+}

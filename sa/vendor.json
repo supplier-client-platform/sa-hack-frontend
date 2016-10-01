@@ -1,0 +1,13 @@
+{
+    "css" : [
+        "./node_modules/angular-material/angular-material.min.css",
+        "./node_modules/v-accordion/dist/v-accordion.min.css",
+        "./node_modules/angular-ui-router-anim-in-out/css/anim-in-out.css",
+        "./node_modules/angular-loading-bar/build/loading-bar.min.css",
+        "./node_modules/ui-select/dist/select.min.css",
+        "./node_modules/flexslider/flexslider.css",
+        "./node_modules/angular-toastr/dist/angular-toastr.css",
+        "./node_modules/angularjs-slider/dist/rzslider.min.css"
+        
+    ]
+}

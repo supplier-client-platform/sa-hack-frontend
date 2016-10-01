@@ -1,0 +1,43 @@
+<div>
+    <h1 class="text-center" ng-bind="vm.text"></h1>
+
+    <div class="container inner-pad">
+        <div class="page inner-header pdb-m">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <h1 class="text-uppercase large primary">Confirmation</h1>
+                </div>
+                <div class="col-md-8">
+                    <nav class="subscribe-step-nav">
+                        <ul class="wizard list-inline">
+                            <li ui-sref-active="active" class="previous"><a translate="USER.REGISTRATION.STEP_1"></a></li>
+                            <li ui-sref-active="active" class="previous"><a translate="USER.REGISTRATION.STEP_2"></a></li>
+                            <li ui-sref-active="active"><a ui-sref="registration_confirmation" translate="USER.REGISTRATION.STEP_3"></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="page-inner-content text-center">
+
+            <div class="page-confirmation">
+                <h1 class="large primary text-center">Your Registration was completed. <br>
+                    Thank you for your subscription!
+                </h1>
+
+                <h4 class="text-center">We've sent you an e-mail containing your account information.</h4>
+            </div>
+
+            <div class="btn-container">
+                <div class="text-center pd-tp-md" ng-controller="headerCtrl as vm">
+                    <a ng-click="vm.login()" class="btn btn-primary btn-md btn-flex">Proceed to login</a>
+                    <br>
+                    <a ui-sref="home" class="text-uppercase">Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

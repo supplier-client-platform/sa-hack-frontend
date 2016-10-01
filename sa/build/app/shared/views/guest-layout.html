@@ -1,0 +1,25 @@
+<header-inner-directive></header-inner-directive>
+
+<div class="layout-inner">
+    <div class="clearfix layout-wrapper">
+        <section class="main main-guest-layout" ng-click="vm.hideNav()">
+            <div class="wrapper">
+                <div ui-view="" class="anim-in-out anim-slide-below-fade" data-anim-speed="400"></div>
+            </div>
+        </section>
+    </div>
+
+    <div class="slide-nav-container slide-nav-guest">
+        <nav class="slide-nav">
+            <ul>
+                <li class="item" ui-sref-active="active"><a ui-sref="post">How it Works</a></li>
+                <li class="item" ui-sref-active="active"><a ui-sref="product">Platforms</a></li>
+                <li class="item" ui-sref-active="active"><a ui-sref="about">Services</a></li>
+                <li class="item" ui-sref-active="active"><a ui-sref="user_login">Case Studies</a></li>
+                <li class="item" ui-sref-active="active"><a ui-sref="user_subscribe">Subscribe</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<footer-directive></footer-directive>

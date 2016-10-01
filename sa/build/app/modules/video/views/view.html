@@ -1,0 +1,149 @@
+<section>
+    <home-carousel-small images="images"></home-carousel-small>
+</section>
+<div class="product-page" id="product-page">
+    <section class="page">
+        <section class="product-view">
+            
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ol class="breadcrumb top-breadcrumb">
+                            <li><a href="" ui-sref="video-listing">Video List</a></li>
+                            <li class="active">Video</li>
+                        </ol>
+                    </div>
+                    <div class="col-sm-6">
+
+                    </div>
+                </div>
+            </div>
+            <section class="container">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="slider-custom slider-product">
+                            <div class="img-slider clearfix">
+                                <div class="slider-content">
+                                    <div class="img-container">
+                                        <ul class="img-list">
+
+
+                                            <div class="imageWrapper video">
+                                                <div class="media-preview clearfix">
+                                                    <div ng-if="vm.media.assets[0].source === 'dam'" ng-include="'app/modules/video/views/partials/template_video_preview.html'"></div>
+                                                </div>
+
+
+                                                <iframe ng-if="vm.media.assets[0].source !== 'dam'" width="560" height="315" ng-src="{{vm.media.trustedUrl}}" frameborder="0" allowfullscreen>
+
+                                                </iframe>
+                                            </div>
+
+
+                                        </ul>
+
+
+                                    </div>
+
+
+
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 product-details">
+                        <div class="action-container">
+                            <ul class="list-inline">
+                                <li class="action">
+                                    <button class="btn">Brand Microsite</button>
+                                </li>
+
+                                <li class="action has-gray-dropdown">
+                                    <ui-select ng-model="vm.seletedItemsPerPage" theme="bootstrap">
+                                        <ui-select-match placeholder="Contact Brand">{{$select.selected.name}}</ui-select-match>
+                                        <ui-select-choices repeat="item in (vm.sortItemList | filter: $select.search)">
+                                            <div ng-bind-html="item.name | highlight: $select.search"></div>
+
+                                        </ui-select-choices>
+                                    </ui-select>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="clearfix product-description">
+                            <h2> {{vm.media.translations[translate].name}}</h2>
+                            <p class="cat">
+                                {{vm.media.tenant.name}}
+                            </p>
+                            <span>
+                        
+                        
+                    </span>
+
+                            <p class="des">
+                                {{vm.media.translations[translate].description}}
+                            </p>
+                            
+                        </div>
+                        
+                        <hr>
+                        <form name="quantityForm">
+                            <button type="submit" class="btn btn-primary">EMBED</button>
+                        </form>
+
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="container midcontent">
+
+        </section>
+
+        <section class="container-fulid btmcontent">
+            <div class="container">
+                <h3>More from christopher guy</h3>
+                <div class="row">
+                    <div class="col-md-2 col-xs-6">
+                        <img class="img-responsive" src="./assets/images/product/33.jpg" alt="">
+                        <p class="styleboard-name">Furniture item 1</p>
+                        <label class="styleboard"><a href="#">View item</a><label>
+                        </label></label></div>
+                    <div class="col-md-2 col-xs-6">
+                        <img class="img-responsive" src="./assets/images/product/44.jpg" alt="">
+                        <p class="styleboard-name">Furniture item 1</p>
+                        <label class="styleboard"><a href="#">View item</a><label>
+                        </label></label></div>
+                    <div class="col-md-2 col-xs-6">
+                        <img class="img-responsive" src="./assets/images/product/55.jpg" alt="">
+                        <p class="styleboard-name">Furniture item 1</p>
+                        <label class="styleboard"><a href="#">View item</a></label>
+                    </div>
+                    <div class="col-md-2 col-xs-6">
+                        <img class="img-responsive" src="./assets/images/product/22.jpg" alt="">
+                        <p class="styleboard-name">Furniture item 1</p>
+                        <label class="styleboard"><a href="#">Buy Now</a></label>
+                    </div>
+                    <div class="col-md-2 col-xs-6">
+                        <img class="img-responsive" src="./assets/images/product/66.jpg" alt="">
+                        <p class="styleboard-name">Furniture item 1</p>
+                        <label class="styleboard"><a href="#">Buy Now</a></label>
+                    </div>
+                    <div class="col-md-2 col-xs-6">
+                        <img class="img-responsive" src="./assets/images/product/77.jpg" alt="">
+                        <p class="styleboard-name">Furniture item 1</p>
+                        <label class="styleboard"><a href="#">Buy Now</a></label>
+                    </div>
+                </div>
+                <div class="row btn-container">
+                    <div class="col-xs-12">
+                        <button class="btn btn-primary center-block">View All</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>

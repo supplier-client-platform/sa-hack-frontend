@@ -1,0 +1,220 @@
+/*-------------------------------------------------
+BASE
+-------------------------------------------------*/
+*{
+  outline: none !important;
+
+  &:hover,
+  &:focus,
+  &:active{
+    text-decoration: none !important;
+  }
+}
+
+html {
+  font-size: 50%;
+  height: auto;
+  display: block;
+  display: flex;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  overflow: auto;
+
+  body {
+    height: auto;
+    display: flex;
+    width: 100%;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+
+    .app {
+      position: relative;
+      width: 100%;
+      overflow-y: hidden !important;
+
+      .ng-app-wrapper{
+        height: 100%;
+        position: relative;
+        overflow-x: hidden;
+
+        @include breakpoint(md){
+          overflow: visible;
+        }
+
+
+        .layout-inner{
+
+          .layout-wrapper{
+
+            .main{
+              min-height: 700px;
+              min-height: 101vh;
+            }
+          }
+        }
+
+        .main{
+
+          &.main-inner-layout{
+            padding-top: 15.3rem;
+            cursor: default;
+
+            @include breakpoint(xl){
+              padding-top: 15.3rem;
+            }
+          }
+          
+          &.main-guest-layout{
+            cursor: default;
+          }
+
+          .wrapper{
+
+            .container{
+
+              .inner-main{
+                position: relative;
+                display: block;
+                height: 100%;
+                padding-top: $base-vert-height * 2.5;
+
+                @include breakpoint(md){
+                  padding-left: 6rem;
+                  margin-left: 29.8rem;
+                }
+
+                .inner-content{
+                  margin-top: 3rem;
+
+                  @include breakpoint(xl){
+                    margin-top: 6.2rem;
+                  }
+                }
+
+
+                @include breakpoint(md){
+                  padding-left: 6rem;
+                  padding-top: $base-vert-height * 4.77;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+a{
+  @include transition(all, 0.2s, ease);
+  text-decoration: none;
+  -webkit-outline: none;
+  -moz-outline: none;
+  outline: none;
+
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+
+/*Typography styling*/
+h1,
+h2 {
+  font-size: 2.6rem;
+  line-height: 1; /* $line-height-base ÷ 26 */
+}
+
+h3,
+h4 {
+  font-size: 1.8rem;
+  line-height: 1.444 /* $line-height-base ÷ 18 */
+}
+
+
+/*Quick links buttons styling*/
+.quick-links{
+  position: fixed;
+  display: block;
+  z-index: 950;
+  right: 0;
+  top: 50%;
+  @include translate(0, -50%);
+
+  @include breakpoint(md-ls){
+    display: none;
+  }
+
+  ul{
+
+    li{
+      display: block;
+      margin-bottom: 0.2rem;
+
+      a{
+        display: block;
+        margin-right: -1rem;
+        @include clearfix();
+        max-height: 5rem;
+
+        .icon{
+          display: inline-block;
+          font-size: 3rem;
+          padding: 1rem 2.4rem 1rem 1.4rem;
+          background: $color-primary;
+          color: $color-white;
+          float: right;
+        }
+
+        .text{
+          float: right;
+          margin-right: 1rem;
+          text-transform: uppercase;
+          font-size: 1.2rem;
+          padding: 1.5rem 0;
+          color: $color-primary !important;
+          @include scale(0.3);
+          display: none;
+        }
+
+
+        &:hover{
+          @include translate(-1rem, 0);
+
+          .text{
+            display: block !important;
+            @include scale(1);
+          }
+        }
+
+        &:active,
+        &:focus{
+          @include  translate(0, 0);
+
+          .text{
+            display: none !important;
+          }
+
+          .icon{
+            background: $color-btn-dark;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+/*-------------------------------------------------
+BREAKPOINTS
+-------------------------------------------------*/
+.container{
+  @include breakpoint(xl){
+    width: 1200px;
+  }
+}
+
+

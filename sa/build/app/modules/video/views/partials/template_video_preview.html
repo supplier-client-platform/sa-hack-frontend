@@ -1,0 +1,17 @@
+<style>
+    .video-js {
+        width: 100%;
+        height: auto;
+    }
+</style>
+
+<div class="item-wrapper">
+
+    <div class="media-content">
+        <video class="video-js vjs-default-skin" controls preload="auto" poster="{{vm.media.assets[0].thumbnails[2].url }}">
+            <source src="{{vm.media.trustedUrl}}" type="video/mp4">
+        </video>
+
+
+    </div>
+</div>

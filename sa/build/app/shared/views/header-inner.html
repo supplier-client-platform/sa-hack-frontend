@@ -1,0 +1,71 @@
+
+<header class="header header-guest navbar-fixed-top" ng-controller="headerCtrl as vm">
+	
+	<div class="nav-bar">
+		<div class="container">
+
+			<div class="nav-toggle pull-left">
+				<a href="#"><span class="icon ico-menu"></span></a>
+			</div>
+
+			<div class="logo-sm">
+				<a ui-sref="home"><img src="./assets/images/logos/logo-pressdecor-dark.svg" alt="CloudDecor"></a>
+				<a href="" ng-click="hamburgerMenu()" class="drop-nav-toggle"><em class="icon ico-menu"></em></a>
+			</div>
+
+			<div class="nav-center">
+				<nav class="primary">
+					<ul class="list-inline">
+						<li class="item">
+							
+						</li>
+					</ul>
+				</nav>
+				
+				<div class="search-block pull-right">
+
+					<a href="#" class="menu-icon user-toggle search-toggle big-icon"><em class="icon ico-currency"></em></a>
+					<a href="#" class="menu-icon user-toggle search-toggle"><em class="icon ico-language"></em></a>
+
+					<a href="javascript:void(0)" class="pointer user-name" ng-if="user">
+						{{ user.first_name }}
+					</a>
+					<a href="javascript:void(0)" class="menu-icon user-toggle pointer" ng-if="user" ng-click="vm.logout()">
+						<em class="icon ico-user"></em>
+					</a>
+					<a class="menu-icon user-toggle pointer" ng-if="!user" ng-click="vm.login()"><em class="icon ico-user"></em></a>
+					<a class="menu-icon user-toggle pointer user-name" ng-if="!user" ui-sref="journalist">Subscribe</a>
+
+				</div>
+				
+			</div>
+			
+		</div>
+
+
+	</div>
+	
+
+	<div class="nav-container" ng-if="hamburgerMenuVisibility">
+		<nav class="categories">
+			<div class="container">
+				<ul class="main-nav list-inline">
+					<li class="has-dropdown open">
+						<a class="pointer" ng-click="hamburgerMenu()" ui-sref="product-listing"> Images</a>
+					</li>
+					<li class="has-dropdown open">
+						<a class="pointer" ng-click="hamburgerMenu()" ui-sref="video-listing">Videos</a>
+					</li>
+					<li class="has-dropdown open">
+						<a class="pointer" ng-click="hamburgerMenu()" ui-sref="#">Events</a>
+					</li>
+					<li class="has-dropdown open">
+						<a class="pointer" ng-click="hamburgerMenu()" ui-sref="#">Directory</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+</header>
+<div class="clearfix"></div>

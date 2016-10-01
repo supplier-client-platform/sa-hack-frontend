@@ -1,0 +1,212 @@
+<section>
+   <img src="./assets/images/microsite/banner.jpg" class="img-responsive center-block" style="width:100%">
+</section>
+<div class="page page-inner has-title has-sidebar">
+    <section class="page-title" id="product-view">
+        <div class="breadcrumb-container">
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Images</a></li>
+                    <li class="active">Cristopher Guy</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section class="container brand-owner-details">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="./assets/images/microsite/logo.jpg" class="img-responsive center-block">
+            </div>
+            <div class="col-lg-6">
+
+            </div>
+            <div class="col-lg-3">
+
+            </div>
+        </div>
+    </section>
+    <section class="main-content has-aside">
+
+        <div class="container clearfix">
+            <form>
+                <aside class="sidebar sidebar-filter">
+                    <v-accordion class="vAccordion--default primary-accordion" expanded="PrimaryAccordionIsExpanded">
+                        <v-pane expanded="true">
+                            <v-pane-header>
+                                <h3>Filters</h3>
+
+                            </v-pane-header>
+
+                            <v-pane-content>
+                                <div class="accordion-container" ng-repeat="(key, value) in vm.categories">
+                                    <v-accordion class="secondary-accordion" id="nestedAccordionB">
+                                        <v-pane>
+                                            <v-pane-header>
+                                                <h4>{{value.display_name}}</h4>
+
+                                            </v-pane-header>
+
+                                            <v-pane-content>
+                                                <div class="accordion-content">
+
+                                                    <div ng-if="value.type == 'multivalued'">
+                                                        <ul>
+                                                            <li ng-repeat="item in value.values">
+                                                                <div ng-if="item.hasOwnProperty('categories')">
+                                                                    <v-accordion class="vAccordion--default third-accordion" id="nestedAccordionC">
+                                                                        <v-pane>
+                                                                            <v-pane-header>
+                                                                                <h5>{{item.name}}</h5>
+                                                                            </v-pane-header>
+
+                                                                            <v-pane-content>
+                                                                                <ul>
+                                                                                    <li ng-repeat="cat in item.categories">
+
+                                                                                        <md-checkbox class="custom sm" name="{{key}}" checklist-model="vm.filters[key]" checklist-value="cat.name" class="custom sm" aria-label="Checkbox">
+                                                                                            {{cat.name}}
+                                                                                        </md-checkbox>
+
+                                                                                    </li>
+
+                                                                                </ul>
+                                                                            </v-pane-content>
+                                                                        </v-pane>
+                                                                    </v-accordion>
+                                                                </div>
+                                                                <div ng-if="!item.hasOwnProperty('categories')">
+
+                                                                    <md-checkbox class="custom sm" name="{{key}}" checklist-model="vm.filters[key]" checklist-value="(item[key] || item.name)" class="custom sm" aria-label="Checkbox">
+                                                                        {{item.name}}
+                                                                    </md-checkbox>
+
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div ng-if="value.type == 'autocomplete'">
+
+                                                        <md-autocomplete required md-selected-item="vm.filters[key]" md-search-text="vm[key]['searchText']" md-items="item in value.values | filter: {'name' : vm[key]['searchText']}" md-item-text="item.name || ' ' " md-input-name="address_country_id" ng-disabled="false" md-selected-item-change="journalist.updateCities(item)">
+
+                                                            <md-item-template>
+                                                                <span md-highlight-text="searchText">{{item.name}}</span>
+                                                            </md-item-template>
+                                                            <md-not-found>
+                                                                No countries matching "{{vm[key]['searchText']}}" were found.
+                                                            </md-not-found>
+
+
+                                                        </md-autocomplete>
+                                                    </div>
+
+                                                    <div ng-if="value.type == 'range'" ng-init="vm.filters[key]={min : 0,max:10000}">
+                                                        <rzslider name="{{key}}" rz-slider-model="vm.filters[key]['min']" rz-slider-high="vm.filters[key]['max']" rz-slider-options="slider.options"></rzslider>
+
+
+
+
+
+
+                                                    </div>
+
+                                                </div>
+                                            </v-pane-content>
+                                        </v-pane>
+                                    </v-accordion>
+                                    <hr ng-class="{'last-item': $last}">
+                                </div>
+
+                                <div class="btn-container text-center">
+                                    <button type="reset" class="btn btn-aside btn-sm btn-flex" ng-click="vm.clearFilters()"> Clear All</button>
+                                </div>
+                            </v-pane-content>
+                        </v-pane>
+
+
+                    </v-accordion>
+
+                </aside>
+
+
+            </form>
+            <section class="inner-content clearfix">
+                <div class="product-container">
+
+
+                    <div class="product-sort-container row">
+                        <div class="col-xs-12">
+                            <div class="sort-box img-sort-container has-gray-dropdown">
+                                <ui-select ng-change="pageItemNoChange()" class="img-sort" ng-model="vm.seletedItemsPerPage" theme="bootstrap">
+                                    <ui-select-match placeholder="Display 12 Images">{{$select.selected.name}}</ui-select-match>
+                                    <ui-select-choices repeat="item in (vm.sortItemList | filter: $select.search)">
+                                        <div ng-bind-html="item.name | highlight: $select.search"></div>
+
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+
+                            <div class="sort-box sortby-container has-gray-dropdown">
+                                <ui-select class="sort-select" ng-model="vm.sortOpt" ng-change="sortChange()" theme="bootstrap">
+                                    <ui-select-match placeholder="Sort By">{{$select.selected}}</ui-select-match>
+                                    <ui-select-choices repeat="item in (vm.sort | filter: $select.search)">
+                                        <div ng-bind-html="item | highlight: $select.search"></div>
+
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                        </div>
+                    </div>
+                    {{vm.lol()}}
+                    <div ng-if="vm.products.length == 0">
+                        <div ng-if="vm.productLoading">
+                            <h1>Loading...</h1>
+                        </div>
+                        <div ng-if="!vm.productLoading">
+                            <h1>Sorry No Products Found!</h1>
+                        </div>
+                    </div>
+                    <div ng-if="vm.products.length != 0">
+                        <ul class="product-list row">
+
+                            <li class="product-single col-xs-12 col-sm-6 col-md-4" ng-repeat="x in vm.products">
+
+                                <a href="" ui-sref="single-product({productId:x.id})">
+                                    <div class="item-wrapper">
+                                        <div class="img-container">
+                                            <img ng-src="{{x.thumbnail}}" alt="" class="img-responsive">
+                                        </div>
+                                        <div class="detail-container">
+                                            <h1>{{x.name}}</h1>
+                                            <div class="clearfix sub-details">
+                                                <span class="pull-left text-primary text-bold">{{x.price | currency:"$"}}</span>
+                                                <span class="pull-right text-primary">{{moment(x.published_at).format("DD-MMM-YYYY")}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>
+
+
+
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="btn-container text-center">
+
+
+                                    <button ng-disabled="(vm.total_filtered == vm.products.length)" class="btn btn-primary btn-sm btn-flex" ng-click="loadMore()">Load More</button>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>

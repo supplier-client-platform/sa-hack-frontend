@@ -1,0 +1,86 @@
+ <md-dialog>
+     <div class="container">
+         <div class="row inner-container">
+             <div class="col-sm-12">
+                    <md-toolbar>
+                        <div class="md-toolbar-tools">
+                            <span flex></span>
+                            <md-button class="md-icon-button" ng-click="cancel()">
+                                <span class="icon ico-arrow-close">
+                                </span>
+                            </md-button>
+                        </div>
+                    </md-toolbar>
+                    <md-dialog-content>
+                        <div ng-if="!user" class="md-dialog-content not-logged">
+                            <h1> Sorry! You need to be logged in to access this feature </h1>
+                            <div class="btn-container">
+                                <div class="text-center pd-tp-md" ng-controller="headerCtrl as vm">
+                                    <a ng-click="vm.login()" class="btn btn-primary btn-md btn-flex">Proceed to login</a>
+                                    <br>
+                                    <a ui-sref="journalist" class="text-uppercase btn btn-primary btn-md btn-flex">Signup</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-if="user" class="md-dialog-content">
+                            <div class="row details-container">
+                                <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+                                        <input type="text" name="publication_namename" ng-model="vm.download.publication_name" ng-minlength="3" placeholder="NAME OF PUBLICATION" alpha-numeric-val="COMMA, SPACE, HYPHEN, SLASH, AT, SINGLE-QUOTE, DOT, AMPERSAND" required>
+                                        
+                                            
+                                            
+
+                                        
+                                </div>
+                                <div class="col-xs-12 col-sm-4">
+                                    <md-datepicker ng-model="vm.download.date" md-open-on-focus md-placeholder="PUBLICATION DATE"></md-datepicker>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-md-offset-1">
+
+                                    <div class="row image-container">
+                                        <h3>Select choice of image(s)</h3>
+                                        <div class="col-md-2 col-xs-6" ng-repeat="slide in vm.product.images | limitTo: 5">
+                                           <div class="popup-img-wrapper">
+                                               <img ng-src="{{slide.urls[0].url}}" class="img-responsive" alt="{{slide.asset_id}}">
+                                           </div>
+                                               <md-checkbox class="custom" name="imageList" checklist-model="vm.download.imageList" checklist-value="slide.asset_id" class="custom sm" aria-label="Checkbox">
+
+                                               </md-checkbox>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </md-dialog-content>
+
+                    <md-dialog-actions layout="row" ng-if="user">
+                        <div class="container">
+                            <div class="row action-wrapper">
+                                <div class="col-sm-4">
+                                    <md-button class="btn" ng-click="vm.downloadZip('high','no')" flex>
+                                        Download Hi Res
+                                    </md-button>
+                                </div>
+                                <div class="col-sm-4">
+                                    <md-button class="btn" flex ng-click="vm.downloadZip('low','no')">
+                                        Download Low Res
+                                    </md-button>
+                                </div>
+                                <div class="col-sm-4">
+                                    <md-button class="btn" flex ng-click="vm.downloadZip('high','yes')">
+                                        Get Download Link
+                                    </md-button>
+                                </div>
+                                 <md-button class="" hidden ng-click="vm.downloadZip('high','yes')">
+                                        Get Download Link
+                                    </md-button>
+                            </div>
+                        </div>
+                    </md-dialog-actions>
+             </div>
+         </div>
+     </div>
+            </md-dialog>

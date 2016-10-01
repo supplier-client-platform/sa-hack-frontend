@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Cloud Decor, Cloud solution for online marketplaces">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pressdecor</title>
+
+	<!--Touch icons-->
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+	<!--Vendor Styles-->
+	<link rel="stylesheet" href="./assets/css/vendor.min.css">
+
+	<!--Custom styles-->
+	<link rel="stylesheet" href="./assets/css/app.min.css">
+
+	<!--TODO: need to add modernizer-->
+</head>
+
+<body ng-app="sa-hack">
+
+	<!--[if lt IE 10]>
+<p class="browser-upgrade">
+	You are using an <strong>outdated</strong> browser.
+	Please <a href="http://browsehappy.com/">upgrade your browser</a>
+	to improve your experience.
+</p>
+<![endif]-->
+
+	<!--Start off app container-->
+	<div class="app">
+
+		<div ui-view="layout" class="ng-app-wrapper layout-outer-wrapper clearfix">
+
+		</div>
+
+	</div>
+	<!--End of main app container-->
+
+	<!--Config scripts, see env/dev.js & env/prod.js-->
+	<script type="text/javascript" src="config.js"></script>
+
+	<!--Vendor scripts-->
+
+
+
+	<script type="text/javascript" src="vendor.min.js"></script>
+	<!--Custom scripts-->
+	<script type="text/javascript" src="main.js"></script>
+
+</body>
+
+</html>

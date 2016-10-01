@@ -1,0 +1,157 @@
+/*-------------------------------------------------
+SMACSS: VARIABLES
+-------------------------------------------------*/
+/* Colors */
+$color-white: #fff;
+$color-black: #000;
+$color-red: #e71838;
+$color-green: #006633;
+$color-green-bright: #24dea3;
+$color-gray: #5a5f62;
+$color-blue: #00a8c6;
+
+/*catalogue colors */
+$btn-color-light-blue :#b6ebeb;
+$btn-text-color:#59c1c6;
+$color-light-gray:#fafafa;
+$light : #9C9FA5;
+
+/*carousel colors*/
+$color-light-gray2:#EBEBEB;
+$color-lighter-gray:#F5F5F5;
+$color-gray2:#AAAAAA;
+$color-ash:#cccccc;
+$color-hover-gray:#ededed;
+
+
+$color-1: #00adb5;
+$color-2: #b767ff;
+$color-3: #ff4b68;
+$color-4: #79a8a9;
+$color-5: #3498db;
+$color-6: #f6b132;
+$color-7: #7b99fa;
+$color-8: #2e3a87;
+
+/*theme Colors*/
+$color-primary: #38baa1;
+$color-primary-tp: rgba(115, 184, 214, 0.71);
+$color-primary-dark: #1c2023;
+$color-primary-dark-lighter: #21292c;
+$color-primary-dark-border: #2e3844;
+$color-primary-dark-light: #676767;
+
+/*Border colors*/
+$color-checkbox-border: #cbe5e4;
+$color-checkbox-border-checked: #cccccc;
+$color-checkbox-text: #999999;
+
+/*Overlay colors*/
+$color-overlay-dark: rgba(35, 41, 44, 0.7);
+$color-overlay-light: rgba(255, 255, 255, 0.85);
+
+/*Link Styles*/
+$color-header-link: #cccccc;
+
+$bg-light: #ffffff;
+$bg-sidebar-light: #fafafa;
+$bg-sidebar-dark: #f6f6f6;
+
+$color-header-dark: rgba(0, 0, 0, .85);
+$color-header-light: rgba(0, 0, 0, .5);
+$color-header-xlight: rgba(0, 0, 0, .15);
+
+$color-btn-dark: #22292d;
+$color-btn-gray: #83878A;
+
+$color-text-primary: #191e23;
+$color-text-dark: #1b1b1b;
+$color-text-light: #999999;
+$color-text-medium: #9e9e9e;
+$color-text-label: #9a9c99;
+
+$color-facebook: #3b5998;
+$color-twitter: #55acee;
+$color-google: #dc4e41;
+
+/*Border colors*/
+$color-border-light: #fafafa;
+$color-input-bg: #f5f5f5;
+$color-list-border: #f9f9f9;
+$color-input-error : #D50047;
+
+/*Nav colors*/
+$color-nav-solid: #000000;
+$color-featured-background:#f3f3f3;
+
+/*gradient colors*/
+$color-grd-top: #66ACCA;
+$color-grd-bottom: #e1eef3;
+
+$color-home-bg: #1c6f8e;
+
+/*Product related colors*/
+$color-published: #38baa1;
+$color-pending: #fccc54;
+$color-unpublished: #f44e72;
+$color-inactive: #80b5d2;
+$color-popup-bg:#222A2C;
+
+/* Font */
+$font-primary: 'Roboto', sans-serif;
+$font-glyphicon: 'Glyphicons Halflings';
+$font-awesome: 'FontAwesome';
+$base-font-size: 1.4rem;
+$base-font-md: 1.6rem;
+
+/*Height variables*/
+$base-vert-height: 2.2rem;
+
+/*Button colors*/
+$color-btn-dark: #22292d;
+$color-btn-hover: #4f5456;
+
+$color-sidenav-bg-light: #2D373C;
+$color-sidenav-bg-dark: #263035;
+
+$input-bg: #f5f5f5;
+
+/*Procduct colors*/
+$color-1: #ed8477;
+$color-2: #d24036;
+$color-3: #a52618;
+$color-4: #c24b21;
+$color-5: #70201c;
+$color-6: #fbf298;
+$color-7: #fade4b;
+$color-8: #f5bb41;
+$color-9: #f2a53a;
+$color-10: #ee792f;
+$color-11: #c34c21;
+$color-12: #f7cdf3;
+$color-13: #a94c8a;
+$color-14: #6d2855;
+$color-15: #3d1623;
+$color-16: #502e15;
+$color-17: #605347;
+$color-18: #d1f3b6;
+$color-19: #cdf381;
+$color-20: #78c562;
+$color-21: #629055;
+$color-22: #2e5025;
+$color-23: #2e6767;
+$color-24: #e1fbfe;
+$color-25: #d0e8f2;
+$color-26: #5aa2b0;
+$color-27: #3d8ab2;
+$color-28: #293a4e;
+$color-29: #1e2d3d;
+$color-30: #131b26;
+$color-31: #12131a;
+$color-32: #acacac;
+
+
+/*Subscription plan colors*/
+$color-plan-1: #80b5d2;
+$color-plan-2: #699edb;
+$color-plan-3: #1b6f8e;

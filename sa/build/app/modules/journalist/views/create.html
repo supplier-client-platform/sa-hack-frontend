@@ -1,0 +1,359 @@
+<section>
+    <home-carousel images="images"></home-carousel>
+</section>
+<div class="journalist-page">
+    <section class="page page-guest" id="form-tab">
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ol class="breadcrumb top-breadcrumb">
+                            <li><a href="#">Home</a></li>
+                            <li class="active">Journalist Registration</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-sm-11 col-xs-12 col-sm-offset-1 journalist-reg-form">
+
+                        <form name="journalist.pd_form" novalidate="novalidate" ng-submit="journalist.submitForm(journalist.pd_form)">
+
+                            <md-tabs md-dynamic-height md-center-tabs="true" md-stretch-tabs="always" md-selected="journalist.selectedIndex" ng-init="journalist.selectedIndex = 0">
+                                <md-tab label="Corporate Profile">
+
+                                    
+                                    <div class="row form-element">
+                                        <div class="col-xs-12 col-sm-11">
+                                            <md-input-container class="md-block form-npd">
+                                                <label class="text-uppercase">Name</label>
+                                                <input ng-model-options="{'tab' : 0}" type="text" name="name" ng-model="journalist.form.journalist.name" ng-minlength="3" placeholder="" reset-parse="" alpha-numeric-val="COMMA, SPACE, HYPHEN, SLASH, AT, SINGLE-QUOTE, DOT, AMPERSAND" required>
+                                                <div ng-messages="journalist.pd_form.name.$error" ng-messages-multiple>
+
+                                                    <div ng-message="required">Name is required.</div>
+                                                    <div ng-message="minlength">Name must be atleast 3 characters.</div>
+                                                    <div ng-message="parse">{{journalist.errors.name}}</div>
+                                                </div>
+                                            </md-input-container>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row form-element">
+                                        <div class="col-xs-12 col-sm-11">
+                                            
+                                            <md-input-container class="md-block form-npd">
+                                                <label class="text-uppercase">Company Address</label>
+                                                <input ng-model-options="{'tab' : 0}" name="address_street_address_1" ng-model="journalist.form.journalist.address.street_address_1" placeholder="" reset-parse="" required alpha-numeric-val="COMMA, SPACE, HYPHEN, SLASH, AT, SINGLE-QUOTE, DOT, AMPERSAND">
+                                                <div ng-messages="journalist.pd_form.address_street_address_1.$error" ng-messages-multiple>
+                                                    <div ng-message="required">Company Address is required.</div>
+                                                    <div ng-message="minlength">Company Address should be atleast 3 characters.</div>
+                                                    <div ng-message="parse">{{journalist.errors.address_street_address_1}}</div>
+                                                </div>
+                                            </md-input-container>
+                                        </div>
+                                    </div>
+
+                                    
+                                    <div class="row form-element">
+                                        <div class="col-xs-12 col-sm-11">
+                                            <md-input-container class="md-block form-npd">
+                                                <label class="text-uppercase">Postal Code </label>
+                                                <input ng-model-options="{'tab' : 0}" ng-model="journalist.form.journalist.address.zip_code" name="address_zip_code" ng-minlength="2" reset-parse="" placeholder="" alpha-numeric-val="SPACE">
+                                                <div ng-messages="journalist.pd_form.address_zip_code.$error" ng-messages-multiple>
+                                                    <div ng-message="minlength">Postal Code should be atleast 2 characters.</div>
+                                                    <div ng-message="parse">{{journalist.errors.address_zip_code}}</div>
+                                                </div>
+                                            </md-input-container>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row form-element">
+                                        <div class="col-xs-12 col-sm-11">
+                                            <md-input-container class="md-block form-npd">
+                                                <label class="text-uppercase">Company Phone</label>
+                                                <input ng-model-options="{'tab' : 0}" type="text" ng-model="journalist.form.journalist.address.phone" name="address_phone" placeholder="" ng-maxlength="15" ng-pattern="/^[+?\d\s()-]{10,15}$/" reset-parse="" required>
+                                                <div ng-messages="journalist.pd_form.address_phone.$error" ng-messages-multiple>
+                                                    <div ng-message="required">Company phone is required.</div>
+                                                    <div ng-message="maxlength">Phone number cannot be more than 15 characters.</div>
+                                                    <div ng-message="pattern">Please provide a valid phone number.</div>
+                                                    <div ng-message="parse">{{journalist.errors.address_phone}}</div>
+                                                </div>
+                                            </md-input-container>
+
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row form-element">
+                                        <div class="col-xs-12 col-sm-11">
+                                            <md-input-container class="md-block form-npd">
+                                                <label class="text-uppercase">Company Fax</label>
+                                                <input ng-model-options="{'tab' : 0}" type="text" ng-model="journalist.form.journalist.address.fax" name="address_fax" placeholder="" ng-maxlength="15" ng-pattern="/^[+?\d\s()-]{10,15}$/" reset-parse="" required>
+                                                <div ng-messages="journalist.pd_form.address_fax.$error" ng-messages-multiple>
+                                                    <div ng-message="required">Company Fax is required.</div>
+                                                    <div ng-message="maxlength">Fax number cannot be more than 15 characters.</div>
+                                                    <div ng-message="pattern">Please provide a valid Fax number.</div>
+                                                    <div ng-message="parse">{{journalist.errors.address_fax}}</div>
+                                                </div>
+                                            </md-input-container>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row form-element">
+                                        <div class="col-xs-12 col-sm-11">
+                                            <md-input-container class="md-block form-npd">
+                                                <label class="text-uppercase">Company Email Address</label>
+                                                <input ng-model-options="{'tab' : 0}" name="address_email" ng-model="journalist.form.journalist.address.email" type="email" email-val="true" placeholder="" reset-parse="" required>
+                                                <div ng-messages="journalist.pd_form.address_email.$error" ng-messages-multiple>
+                                                    <div ng-message="required">Company Email is required.</div>
+                                                    <div ng-message="email">Please provide a valid email address.</div>
+
+                                                    <div ng-message="parse">{{journalist.errors.address_email}}</div>
+                                                </div>
+
+                                            </md-input-container>
+                                        </div>
+                                    </div>
+                                    
+
+                                    <div class="row form-element">
+                                        <div class="col-xs-12 col-sm-11">
+                                            <md-input-container class="input-search form-npd mgb-2x">
+                                                <label class="text-uppercase">Country</label>
+
+                                                <md-autocomplete required md-selected-item="journalist.form.country" md-search-text="journalist.searchText" md-items="item in  querySearch(journalist.searchText)" md-item-text="item.name || '' " md-input-name="address_country_id" ng-disabled="false" md-selected-item-change="journalist.updateCities(item)" md-no-cache="noCache" ng-model-options="{'tab' : 0}">
+                                                    <md-item-template>
+                                                        <span md-highlight-text="searchText">{{item.name}}</span>
+                                                    </md-item-template>
+                                                    <md-not-found>
+                                                        No countries matching "{{journalist.searchText}}" were found.
+                                                    </md-not-found>
+
+                                                </md-autocomplete>
+
+                                                <div ng-messages="journalist.pd_form.address_country_id.$error" ng-messages-multiple>
+                                                    <div ng-message="required"> Country is required</div>
+                                                    <div ng-message="parse">{{vm.errors.address_country_id}}</div>
+                                                </div>
+                                                <div class="validation-messages" ng-show="journalist.searchText && journalist.searchText !== journalist.form.country.name">
+                                                    '{{ journalist.searchText }}' is not a valid country.Please select one from the list.
+                                                </div>
+
+                                            </md-input-container>
+                                        </div>
+                                    </div>
+
+                                    
+                                    <div class="row form-element">
+                                        <div class="col-xs-12 col-sm-11">
+                                            <md-input-container class="select-container has-gray-dropdown has-margin form-npd">
+                                                <label class="text-uppercase">City</label>
+                                                <ui-select ng-model-options="{'tab' : 0}" name="address_city_id" ng-disabled="!journalist.cities || journalist.cities.length < 1" reset-parse="" ng-required="true" ng-model="journalist.form.city.selected" title="Choose a City">
+                                                    <ui-select-match>{{$select.selected.name}}</ui-select-match>
+                                                    <ui-select-choices repeat="city in journalist.cities | filter: $select.search">
+                                                        <span ng-bind-html="city.name | highlight: $select.search"></span>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                                <div ng-messages="journalist.pd_form.address_city_id.$error" ng-if="(journalist.pd_form.address_city_id.$invalid && (journalist.pd_form.address_city_id.$touched || journalist.pd_form.address_city_id.$submitted))" ng-messages-multiple>
+                                                    <div ng-message="required">Please enter your city.{{ !journalist.form.country.selectedItem ? ' (First
+                                                        select a country)' : ''}}</div>
+                                                    <div ng-message="parse">{{journalist.errors.address_city_id}}</div>
+                                                </div>
+                                            </md-input-container>
+                                        </div>
+                                    </div>
+                                </md-tab>
+                                <md-tab label="Personal Profile" md-selected="journalist.selectedIndex">
+
+                                    
+                                    <div class="row form-element">
+                                        <div class="col-xs-12 col-sm-11">
+
+                                            <md-input-container class="md-block form-npd">
+                                                <label class="text-uppercase">Admin Email (User name)</label>
+
+                                                <input name="user_email" ng-model-options="{'tab' : 1}" ng-model="journalist.form.contacts.admin.email" type="email" email-val="true" placeholder="" reset-parse="" required>
+                                                <div ng-messages="journalist.pd_form.user_email.$error" ng-messages-multiple>
+                                                    <div ng-message="required">Admin Email is required.</div>
+                                                    <div ng-message="email">Please provide a valid email address.</div>
+                                                    <div ng-message="parse">{{journalist.errors.user_email}}</div>
+                                                </div>
+
+                                            </md-input-container>
+
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row form-element">
+                                        <div class="col-xs-12 col-sm-11">
+
+                                            <md-input-container class="md-block form-npd">
+                                                <label class="text-uppercase">Admin Name</label>
+                                                <input ng-model-options="{'tab' : 1}" type="text" name="admin_first_name" ng-model="journalist.form.contacts.admin.first_name" ng-minlength="3" placeholder="" reset-parse="" alpha-numeric-val="COMMA, SPACE, HYPHEN" required>
+
+                                                <div ng-messages="journalist.pd_form.admin_first_name.$error" ng-messages-multiple>
+
+                                                    <div ng-message="required">Admin Name is required.</div>
+                                                    <div ng-message="minlength">Admin Name must be atleast 3 characters.</div>
+                                                    <div ng-message="parse">{{journalist.errors.admin_first_name}}</div>
+                                                </div>
+                                            </md-input-container>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row form-element">
+                                        <div class="col-xs-12 col-sm-11">
+
+                                            <md-input-container class="md-block form-npd">
+                                                <label class="text-uppercase">Admin Contact Number</label>
+                                                <input ng-model-options="{'tab' : 1}" type="text" ng-model="journalist.form.contacts.admin.phone" name="admin_phone" placeholder="" ng-maxlength="15" ng-pattern="/^[+?\d\s()-]{10,15}$/" reset-parse="" required>
+                                                <div ng-messages="journalist.pd_form.admin_phone.$error" ng-messages-multiple>
+                                                    <div ng-message="required">Admin phone is required.</div>
+                                                    <div ng-message="maxlength">Phone number cannot be more than 15 characters.</div>
+                                                    <div ng-message="pattern">Please provide a valid phone number.</div>
+                                                    <div ng-message="parse">{{journalist.errors.admin_phone}}</div>
+                                                </div>
+                                            </md-input-container>
+
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row form-element">
+                                        <div class="col-xs-12 col-sm-11">
+
+                                            <md-input-container class="md-block form-npd">
+                                                <label class="text-uppercase">Contact Person Email</label>
+                                                <input ng-model-options="{'tab' : 1}" name="contact_person_email" ng-model="journalist.form.contact_person.email" type="email" email-val="true" placeholder="" reset-parse="">
+                                                <div ng-messages="journalist.pd_form.contact_person_email.$error" ng-messages-multiple>
+                                                    <div ng-message="required">Contact Person Email is required.</div>
+                                                    <div ng-message="email">Please provide a valid email address.</div>
+
+                                                    <div ng-message="parse">{{journalist.errors.contact_person_email}}</div>
+                                                </div>
+
+                                            </md-input-container>
+
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row form-element">
+                                        <div class="col-xs-12 col-sm-11">
+
+                                            <md-input-container class="md-block form-npd">
+                                                <label class="text-uppercase">Contact Person Name</label>
+                                                <input ng-model-options="{'tab' : 1}" type="text" name="contact_person_first_name" ng-model="journalist.form.contact_person.first_name" ng-minlength="3" placeholder="" alpha-numeric-val="COMMA, SPACE, HYPHEN" reset-parse="">
+                                                <div ng-messages="journalist.pd_form.contact_person_first_name.$error" ng-messages-multiple>
+
+                                                    <div ng-message="required">Contact Person Name is required.</div>
+                                                    <div ng-message="minlength"> Contact Person Name must be atleast 3 characters.</div>
+                                                    <div ng-message="parse">{{journalist.errors.contact_person_first_name}}</div>
+                                                </div>
+                                            </md-input-container>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row form-element">
+                                        <div class="col-xs-12 col-sm-11">
+
+                                            <md-input-container class="md-block form-npd">
+                                                <label class="text-uppercase">Contact Person Contact Number</label>
+                                                <input ng-model-options="{'tab' : 1}" type="text" ng-model="journalist.form.contact_person.phone" name="contact_person_phone" placeholder="" ng-maxlength="15" ng-pattern="/^[+?\d\s()-]{10,15}$/" reset-parse="">
+                                                <div ng-messages="journalist.pd_form.contact_person_phone.$error" ng-messages-multiple>
+                                                    <div ng-message="required">Contatct Person phone is required.</div>
+                                                    <div ng-message="maxlength">Phone number cannot be more than 15 characters.</div>
+                                                    <div ng-message="pattern">Please provide a valid phone number.</div>
+                                                    <div ng-message="parse">{{journalist.errors.contact_person_phone}}</div>
+                                                </div>
+                                            </md-input-container>
+                                        </div>
+                                    </div>
+                                    <div class="row form-element">
+                                        <div class="col-sm-11">
+                                            <v-accordion class="vAccordion--default" expand="self.termsAccordionExpand">
+                                                <v-pane>
+                                                    <v-pane-header>
+                                                        <p>
+                                                            Terms and Conditions
+                                                        </p>
+                                                    </v-pane-header>
+
+                                                    <v-pane-content>
+                                                        <div class="col-md-12 scroll-container bg-light clearfix">
+                                                            <div class="scroll-inner">
+                                                                <div class="scroll-inner">
+                                                                    <h2 class="text-uppercase" translate="USER.REGISTRATION.TERMS_CONDITIONS"></h2>
+                                                                    <p>By placing an order with EtonDigital, you confirm that you are in agreement with and bound by the terms and conditions below.</p>
+                                                                    <p>Definitions:</p>
+                                                                    <p>The Client: The company or individual requesting the services of EtonDigital.</p>
+                                                                    <p>EtonDigital: Primary designer/site owner & employees or affiliates.</p>
+                                                                    <p>General</p>
+                                                                    <p>EtonDigital will carry out work only where an agreement is provided either by email, telephone, mail or fax. EtonDigital will carry out work only for clients who are 18 years of age or above. An ‘order’ is deemed to be a written or verbal contract between EtonDigital and the client, this includes By placing an order with EtonDigital, you confirm that you are in agreement with and bound by the terms and conditions below.</p>
+                                                                    <p>Definitions:</p>
+                                                                    <p>The Client: The company or individual requesting the services of EtonDigital.</p>
+                                                                    <p>EtonDigital: Primary designer/site owner & employees or affiliates.</p>
+                                                                    <p>General</p>
+                                                                    <p>EtonDigital will carry out work only where an agreement is provided either by email, telephone, mail or fax. EtonDigital will carry out work only for clients who are 18 years of age or above. An ‘order’ is deemed to be a written or verbal contract between EtonDigital and the client, this includes By placing an order with EtonDigital, you confirm that you are in agreement with and bound by the terms and conditions below.</p>
+                                                                    <p>Definitions:</p>
+                                                                    <p>The Client: The company or individual requesting the services of EtonDigital.</p>
+                                                                    <p>EtonDigital: Primary designer/site owner & employees or affiliates.</p>
+                                                                    <p>General</p>
+                                                                    <p>EtonDigital will carry out work only where an agreement is provided either by email, telephone, mail or fax. EtonDigital will carry out work only for clients who are 18 years of age or above. An ‘order’ is deemed to be a written or verbal contract between EtonDigital and the client, this includes By placing an order with EtonDigital, you confirm that you are in agreement with and bound by the terms and conditions below.</p>
+                                                                    <p>Definitions:</p>
+                                                                    <p>The Client: The company or individual requesting the services of EtonDigital.</p>
+                                                                    <p>EtonDigital: Primary designer/site owner & employees or affiliates.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </v-pane-content>
+                                                </v-pane>
+                                            </v-accordion>
+                                        </div>
+                                    </div>
+                                    <div class="row checkbox-container">
+                                        <div class="col-sm-11">
+                                            <div class="col-md-12 clearfix">
+                                                <md-input-container class="md-block form-npd">
+                                                    <md-checkbox class="lg custom" aria-label="Checkbox 1" name="terms" ng-model-options="{'tab' : 1}" ng-model="journalist.form.checks" required>
+                                                        <span>I agree to the aforementioned Terms and Conditions.</span>
+                                                    </md-checkbox>
+                                                    <div ng-messages="journalist.pd_form.terms.$error" ng-if="(journalist.pd_form.terms.$invalid &&
+                                                                (journalist.pd_form.terms.$touched || journalist.pd_form.$submitted))">
+                                                        <div ng-message="required"> Please accept terms and conditions before proceed</div>
+                                                    </div>
+                                                </md-input-container>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </md-tab>
+                            </md-tabs>
+                            <div class="row">
+                                <div class="col-md-10-col-md-offset-1">
+                                    <div class="btn-container">
+                                        <div class="text-center pd-tp-md">
+                                            <button ng-if="journalist.selectedIndex === 1" type="button" class="btn btn-light btn-sm btn-flex" tab-change tabs="2" alias="journalist">BACK</button>
+                                            <md-button ng-click="journalist.switchTabs()" class="btn btn-primary btn-sm btn-flex has-loader" ng-disabled="journalist.saveLoading" ng-if="journalist.selectedIndex === 1" ng-class="{loading: journalist.saveLoading}" type="submit">
+                                                SUBMIT
+                                                <md-progress-circular class="md-hue-1 primary" md-mode="indeterminate" md-diameter="40px">
+                                                </md-progress-circular>
+                                            </md-button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="col-md-10-col-md-offset-1">
+                            <div class="btn-container">
+                                <div class="text-center pd-tp-md">
+                                    <button ng-if="journalist.selectedIndex === 0" class="btn btn-primary btn-sm btn-flex" tab-change tabs="2" alias="journalist"> NEXT</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>

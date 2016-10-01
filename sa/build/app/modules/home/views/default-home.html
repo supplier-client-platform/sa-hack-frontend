@@ -1,0 +1,297 @@
+<section>
+    <home-carousel images="images"></home-carousel>
+</section>
+<div ng-controller="homeCtrl as home" class="logged-home-page">
+    <section class="page page-guest">
+        <section class="inner-content">
+            <div class="container">
+                <div class="row trending-img-list">
+                    <h1 class="page-title">Trending images</h1>
+                    <div class="">
+
+                        <ul>
+                            <li class="trending-img-item col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                <a ui-sref="product-single(({productCategoryId : value.id }))">
+                                <div class="item-wrapper hover">
+                                    <div class="img-container text-center">
+                                        <img class="center-block img-responsive" src="./assets/images/categories/seating/coffee-table.jpg" alt="">
+                                    </div>
+                                    <div class="item-details">
+                                        <h1>Danish Coffee Table</h1>
+                                        <label class="brand-name">Brand name</label>
+                                        <label>Mittelgeschaft<span class="pull-right">{{value.price}}</span></label>
+                                    </div>
+                                </div>
+                                </a>
+                            </li>
+                            <li class="trending-img-item col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                <a ui-sref="product-single(({productCategoryId : value.id }))">
+                                    <div class="item-wrapper hover">
+                                        <div class="img-container text-center">
+                                            <img class="center-block img-responsive" src="./assets/images/categories/seating/danish-shelving.jpg" alt="">
+                                        </div>
+                                        <div class="item-details">
+                                            <h1>Danish Shelving</h1>
+                                            <label class="brand-name">Brand name</label>
+                                            <label>Mittelgeschaft<span class="pull-right">{{value.price}}</span></label>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="trending-img-item col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                <a ui-sref="product-single(({productCategoryId : value.id }))">
+                                    <div class="item-wrapper hover">
+                                        <div class="img-container text-center">
+                                            <img class="center-block img-responsive" src="./assets/images/categories/seating/danish-sofa-3.jpg" alt="">
+                                        </div>
+                                        <div class="item-details">
+                                            <h1>Danish Sofa 3</h1>
+                                            <label class="brand-name">Brand name</label>
+                                            <label>Mittelgeschaft<span class="pull-right">{{value.price}}</span></label>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="trending-img-item col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                <a ui-sref="product-single(({productCategoryId : value.id }))">
+                                    <div class="item-wrapper hover">
+                                        <div class="img-container text-center">
+                                            <img class="center-block img-responsive" src="./assets/images/categories/seating/danish-sofa-4.jpg" alt="">
+                                        </div>
+                                        <div class="item-details">
+                                            <h1>Danish sofa 4</h1>
+                                            <label class="brand-name">Brand name</label>
+                                            <label>Mittelgeschaft<span class="pull-right">{{value.price}}</span></label>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row trending-img-list latest-imgs">
+                    <h1 class="page-title">Latest images</h1>
+                    <div class="">
+
+                        <ul>
+                            <li class="trending-img-item col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                <a ui-sref="product-single(({productCategoryId : value.id }))">
+                                    <div class="item-wrapper hover">
+                                        <div class="img-container text-center">
+                                            <img class="center-block img-responsive" src="./assets/images/categories/seating/chaise-lounges.jpg" alt="">
+                                        </div>
+                                        <div class="item-details">
+                                            <h1>Danish Coffee Table</h1>
+                                            <label class="brand-name">Brand name</label>
+                                            <label>Mittelgeschaft<span class="pull-right">{{value.price}}</span></label>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="trending-img-item col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                <a ui-sref="product-single(({productCategoryId : value.id }))">
+                                    <div class="item-wrapper hover">
+                                        <div class="img-container text-center">
+                                            <img class="center-block img-responsive" src="./assets/images/categories/seating/outdoor-chairs.jpg" alt="">
+                                        </div>
+                                        <div class="item-details">
+                                            <h1>Danish Shelving</h1>
+                                            <label class="brand-name">Brand name</label>
+                                            <label>Mittelgeschaft<span class="pull-right">{{value.price}}</span></label>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="trending-img-item col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                <a ui-sref="product-single(({productCategoryId : value.id }))">
+                                    <div class="item-wrapper hover">
+                                        <div class="img-container text-center">
+                                            <img class="center-block img-responsive" src="./assets/images/categories/seating/3d-printed.jpg" alt="">
+                                        </div>
+                                        <div class="item-details">
+                                            <h1>Danish Sofa 3</h1>
+                                            <label class="brand-name">Brand name</label>
+                                            <label>Mittelgeschaft<span class="pull-right">{{value.price}}</span></label>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="trending-img-item col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                <a ui-sref="product-single(({productCategoryId : value.id }))">
+                                    <div class="item-wrapper hover">
+                                        <div class="img-container text-center">
+                                            <img class="center-block img-responsive" src="./assets/images/categories/seating/rocking-chairs-left.jpg" alt="">
+                                        </div>
+                                        <div class="item-details">
+                                            <h1>Danish sofa 4</h1>
+                                            <label class="brand-name">Brand name</label>
+                                            <label>Mittelgeschaft<span class="pull-right">{{value.price}}</span></label>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row latest-press latest-imgs">
+                    <h1 class="page-title">Latest Press Release</h1>
+                    <div class="">
+
+                        <ul>
+                            <li class="latest-img-item col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                <a ui-sref="product-single(({productCategoryId : value.id }))">
+                                    <div class="item-wrapper border-none">
+                                        <div class="img-container text-center">
+                                            <div class="box-hover">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    Phasellus eu sodales est. Pellentesque et sapien ac lectus porta
+                                                    accumsan ut imperdiet erat. Duis pharetra lacus massa
+                                                </p>
+                                            </div>
+                                            <img class="center-block img-responsive" src="./assets/images/categories/seating/arm-chair.jpg" alt="">
+                                        </div>
+                                        <div class="item-details">
+                                            <h1>Pess Title</h1>
+                                            <label class="brand-name">Brand name</label>
+                                            <label>6 May 2016</label>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="latest-img-item col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                <a ui-sref="product-single(({productCategoryId : value.id }))">
+                                    <div class="item-wrapper border-none">
+                                        <div class="img-container text-center">
+                                            <div class="box-hover">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    Phasellus eu sodales est. Pellentesque et sapien ac lectus porta
+                                                    accumsan ut imperdiet erat. Duis pharetra lacus massa
+                                                </p>
+                                            </div>
+                                            <img class="center-block img-responsive" src="./assets/images/categories/seating/sofas.jpg" alt="">
+                                        </div>
+                                        <div class="item-details">
+                                            <h1>Pess Title</h1>
+                                            <label class="brand-name">Brand name</label>
+                                            <label>8 May 2016</label>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="latest-img-item col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                <a ui-sref="product-single(({productCategoryId : value.id }))">
+                                    <div class="item-wrapper border-none">
+                                        <div class="img-container text-center">
+                                            <div class="box-hover">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    Phasellus eu sodales est. Pellentesque et sapien ac lectus porta
+                                                    accumsan ut imperdiet erat. Duis pharetra lacus massa
+                                                </p>
+                                            </div>
+                                            <img class="center-block img-responsive" src="./assets/images/categories/seating/wingback-chairs.jpg" alt="">
+                                        </div>
+                                        <div class="item-details">
+                                            <h1>Pess Title</h1>
+                                            <label class="brand-name">Brand name</label>
+                                            <label>12 May 2016</label>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="latest-img-item col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                <a ui-sref="product-single(({productCategoryId : value.id }))">
+                                    <div class="item-wrapper border-none">
+                                        <div class="img-container text-center">
+                                            <div class="box-hover">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    Phasellus eu sodales est. Pellentesque et sapien ac lectus porta
+                                                    accumsan ut imperdiet erat. Duis pharetra lacus massa
+                                                </p>
+                                            </div>
+                                            <img class="center-block img-responsive" src="./assets/images/categories/seating/press-lamp.jpg" alt="">
+                                        </div>
+                                        <div class="item-details">
+                                            <h1>Pess Title</h1>
+                                            <label class="brand-name">Brand name</label>
+                                            <label>5 May 2016</label>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row latest-feature latest-imgs">
+                    <h1 class="page-title">Latest Features</h1>
+                    <div class="">
+
+                        <ul>
+                            <li class="latest-feature-img col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                <a ui-sref="product-single(({productCategoryId : value.id }))">
+                                    <div class="item-wrapper border-none">
+                                        <div class="img-container text-center">
+                                            <img class="center-block img-responsive" src="./assets/images/home/latest-feature1.jpg" alt="">
+                                        </div>
+                                        <div class="item-details">
+                                            <h1>Danish Leather Sofa</h1>
+                                            <label class="brand-name">Brand name</label>
+                                            <label>Mittelgeschaft</label>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="latest-feature-img col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                <a ui-sref="product-single(({productCategoryId : value.id }))">
+                                    <div class="item-wrapper border-none">
+                                        <div class="img-container text-center">
+                                            <img class="center-block img-responsive" src="./assets/images/home/latest-feature2.jpg" alt="">
+                                        </div>
+                                        <div class="item-details">
+                                            <h1>Danish Leather Sofa</h1>
+                                            <label class="brand-name">Brand name</label>
+                                            <label>Mittelgeschaft</label>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="latest-feature-img col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                <a ui-sref="product-single(({productCategoryId : value.id }))">
+                                    <div class="item-wrapper border-none">
+                                        <div class="img-container text-center">
+                                            <img class="center-block img-responsive" src="./assets/images/home/latest-feature3.jpg" alt="">
+                                        </div>
+                                        <div class="item-details">
+                                            <h1>Danish Leather Sofa</h1>
+                                            <label class="brand-name">Brand name</label>
+                                            <label>Mittelgeschaft</label>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="latest-feature-img col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                <a ui-sref="product-single(({productCategoryId : value.id }))">
+                                    <div class="item-wrapper border-none">
+                                        <div class="img-container text-center">
+                                            <img class="center-block img-responsive" src="./assets/images/home/latest-feature4.jpg" alt="">
+                                        </div>
+                                        <div class="item-details">
+                                            <h1>Danish Leather Sofa</h1>
+                                            <label class="brand-name">Brand name</label>
+                                            <label>Mittelgeschaft</label>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>
