@@ -1,5 +1,9 @@
 
 require('./shared/common');
+require('./shared');
+
+
+require('./modules/demo/demo.routing');
 
 /**
  * ENV
@@ -7,10 +11,13 @@ require('./shared/common');
 var $global = require('./shared/utils/constants.js');
 var $message = require('./shared/utils/messages.js');
 
-angular
+
+var app = angular
     .module('sa-hack', [
 
         'clouddecor.common',
+        'sa-hack.shared',
+       
         //------------- Node modules ------------//
         'ui.router',
         'ngMaterial',
@@ -30,13 +37,12 @@ angular
         'checklist-model',
         'rzModule',
         'ngMaterialDatePicker',
-         
-        //------------- App modules ------------//
 
-         
 
-    ])
-    .config(["$urlRouterProvider", "$stateProvider", "snSkrollrProvider", "toastrConfig", "cfpLoadingBarProvider", configFunction])
+        'sa-hack.demo'
+    ]);
+app.
+    config(["$urlRouterProvider", "$stateProvider", "snSkrollrProvider", "toastrConfig", "cfpLoadingBarProvider", configFunction])
     .constant("$global", $global)
     .constant("$message", $message)
     .run(run);
@@ -49,8 +55,7 @@ function configFunction($urlRouterProvider, $stateProvider, snSkrollrProvider, t
     //Main Routing
     $stateProvider
         .state('default', {
-            abstract: false,
-            url:"",
+            abstract: true,
             views: {
                 layout: {
                     templateUrl: 'app/shared/views/default-layout.html'
@@ -73,7 +78,7 @@ function configFunction($urlRouterProvider, $stateProvider, snSkrollrProvider, t
     });
 }
 
- 
+
 
 function run(
     $rootScope,
@@ -81,12 +86,14 @@ function run(
     $cookies,
     toastr,
     snSkrollr,
-    $state
+    $state,
+    CommonService
 ) {
 
-     console.log("app works");
-     $(document).ready(function(){
-         console.log("fucl");
-     });
-   
+
+    CommonService.log("app Works");
+    
+    $state.go('default.demo');
+
+
 }
