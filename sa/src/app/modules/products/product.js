@@ -9,7 +9,7 @@ function config($stateProvider) {
     $stateProvider
         .state('default.products', {
             abstract: false,
-            url: null,
+            url: 'product',
             views: {
                 content: {
                     templateUrl: 'app/modules/products/product.html',

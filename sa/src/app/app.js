@@ -7,6 +7,7 @@ require('./shared');
 
 require('./modules/demo/demo.routing');
 require('./modules/products/product');
+require('./modules/cart/cart');
 
 /**
  * ENV
@@ -43,7 +44,8 @@ var app = angular
 
 //--app modules--//
         'sa-hack.demo',
-        'sa-hack.products'
+        'sa-hack.products',
+        'sa-hack.cart'
     ]);
 app.
     config(["$urlRouterProvider", "$stateProvider", "snSkrollrProvider", "toastrConfig", "cfpLoadingBarProvider", configFunction])
@@ -60,12 +62,15 @@ function configFunction($urlRouterProvider, $stateProvider, snSkrollrProvider, t
     $stateProvider
         .state('default', {
             abstract: true,
+            url:"/",
             views: {
                 layout: {
                     templateUrl: 'app/shared/views/default-layout.html'
                 }
             }
         });
+
+        $urlRouterProvider.otherwise('/demo');
 
     snSkrollrProvider.config = { smoothScrolling: true };
 
@@ -97,7 +102,6 @@ function run(
 
     CommonService.log("app Works");
     
-    $state.go('default.demo');
-
-
+   
+//$state.go('default.demo');
 }
