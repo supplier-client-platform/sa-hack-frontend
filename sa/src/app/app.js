@@ -3,7 +3,10 @@ require('./shared/common');
 require('./shared');
 
 
+
+
 require('./modules/demo/demo.routing');
+require('./modules/products/product');
 
 /**
  * ENV
@@ -38,8 +41,9 @@ var app = angular
         'rzModule',
         'ngMaterialDatePicker',
 
-
-        'sa-hack.demo'
+//--app modules--//
+        'sa-hack.demo',
+        'sa-hack.products'
     ]);
 app.
     config(["$urlRouterProvider", "$stateProvider", "snSkrollrProvider", "toastrConfig", "cfpLoadingBarProvider", configFunction])

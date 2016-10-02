@@ -5,4 +5,3 @@ angular.module('sa-hack.demo.demoController', [])
 function DemoController(CommonService) {
     CommonService.log("demo works");
 }
- 
